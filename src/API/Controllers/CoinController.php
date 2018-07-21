@@ -1,0 +1,25 @@
+<?php
+
+    require(dirname(__FILE__).'/'.'BaseController.php'); 
+
+    class CoinController extends BaseController{
+
+        public function getCoin($id){
+            //call api get coin, return coin
+        }
+
+        public function getCoins(){
+            //call api get all coins, return list
+        }
+
+        public function sort($sortType, $sortOrder){
+            //switch statement to sort
+        }
+
+        public function filter($filter){
+            //filter coinlist, returned filtered results
+        }
+    }
+
+
+?>
