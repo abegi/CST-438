@@ -4,8 +4,15 @@
 
     class CoinController extends BaseController{
 
+        private function __construct($id)
+        {
+            $this->getCoin($id);
+        }
+
+
         public function getCoin($id){
             //call api get coin, return coin
+            
         }
 
         public function getCoins(){
