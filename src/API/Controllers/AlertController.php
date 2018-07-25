@@ -9,6 +9,12 @@
             $this->setAlert($price, $id, $email);
         }
         
+        public function setAlert($price, $id, $email)
+        {
+            //create alert
+            
+        }
+        
         public function sendAlert()
         {
             //send message to email
