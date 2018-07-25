@@ -1,6 +1,6 @@
 <?php
 
-    require(dirname(__FILE__).'/'.'BaseController.php'); 
+    require(dirname(__FILE__).'/'.'BaseController.php');
 
     class CoinController extends BaseController{
 
@@ -12,11 +12,19 @@
 
         public function getCoin($id){
             //call api get coin, return coin
-            
+
         }
 
         public function getCoins(){
             //call api get all coins, return list
+        }
+
+        public function getCoinUrl($id){
+            //call api get coin, return url
+        }
+
+        public function getCoinSymbol($id){
+            //call api get coin, return coin symbol
         }
 
         public function sort($sortType, $sortOrder){
