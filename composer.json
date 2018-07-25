@@ -1,0 +1,12 @@
+{
+    "require": {
+        "phpunit/phpunit": "7",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        
+        "psr-0": {
+            "tests": ""
+        }
+    }
+}
