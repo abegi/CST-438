@@ -1,29 +1,29 @@
 <?php
 
-    require(dirname(__FILE__).'/'.'BaseController.php'); 
+    require_once($_SERVER['DOCUMENT_ROOT'] . 'src/API/Controllers/BaseController.php');
 
     class CoinController extends BaseController{
 
-    
+
         public function getCoin($id){
             //call api get coin, return coin
-            $ch = curl_init("https://www.cryptocompare.com/api/data/coinsnapshotfullbyid/?id=".$id); 
+            $ch = curl_init("https://www.cryptocompare.com/api/data/coinsnapshotfullbyid/?id=".$id);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             $data = curl_exec($ch);
             curl_close($ch);
- 
+
             return json_decode($data, true);
         }
 
         public function getCoins(){
             //call api get all coins, return list
-            $ch = curl_init("https://www.cryptocompare.com/api/data/coinlist/"); 
+            $ch = curl_init("https://www.cryptocompare.com/api/data/coinlist/");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             $data = curl_exec($ch);
             curl_close($ch);
-            
+
             $parseJson = json_decode($data,true);
             $coinArray = array();
 
@@ -36,7 +36,7 @@
 
         public function coinSort($sortType, $sortOrder){
             //switch statement to sort
-            $ch = curl_init("https://www.cryptocompare.com/api/data/coinlist/"); 
+            $ch = curl_init("https://www.cryptocompare.com/api/data/coinlist/");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             $data = curl_exec($ch);
@@ -86,10 +86,10 @@
                         break;
                         case 13: //Sponsored
                         break;
-                        default: 
+                        default:
                             sort($sortCoinArray);
                            break;
-                        
+
 
                     }
                 case 1: //Descending
@@ -126,7 +126,7 @@
                         break;
                         case 13: //Sponsored
                         break;
-                        default: 
+                        default:
                             rsort($sortCoinArray);
                     }
                 }
@@ -137,12 +137,12 @@
 
         public function filter($filter){
             //filter coinlist, returned filtered results
-            $ch = curl_init("https://www.cryptocompare.com/api/data/coinlist/"); 
+            $ch = curl_init("https://www.cryptocompare.com/api/data/coinlist/");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             $data = curl_exec($ch);
             curl_close($ch);
-            
+
             $parseJson = json_decode($data,true);
             $coinArray = array();
 
