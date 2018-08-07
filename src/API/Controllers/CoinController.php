@@ -1,5 +1,5 @@
 <?php
-
+    //MAIN CONTROLLER WHICH RETURNS THE COIN LIST AND SINGLE COIN
     require(dirname(__FILE__).'/'.'BaseController.php'); 
 
     class CoinController extends BaseController{
@@ -24,14 +24,16 @@
             $data = curl_exec($ch);
             curl_close($ch);
             
-            $parseJson = json_decode($data,true);
-            $coinArray = array();
+            // $parseJson = json_decode($data,true);
+            // $coinArray = array();
 
-            foreach($parseJson['Data'] as $coin)
-            {
-                array_push($coinArray, $coin);
-            }
-            return $coinArray;
+            // foreach($parseJson['Data'] as $coin)
+            // {
+            //     array_push($coinArray, $coin);
+            // }
+            // return $coinArray;
+
+            return json_decode($data, true);
         }
 
         public function coinSort($sortType, $sortOrder){

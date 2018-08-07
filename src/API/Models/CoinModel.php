@@ -1,5 +1,5 @@
 <?php
-
+//MAIN MODEL WHICH SHOWS THE COIN INFO
 class CoinModel {
 
     public $id;
