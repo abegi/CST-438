@@ -3,7 +3,27 @@
     require(dirname(__FILE__).'/'.'BaseController.php'); 
 
     class CoinController extends BaseController{
+        private $list = array();
+        private $listeners = array();
 
+        public function subscribe($sub) {
+            listeners.add(sub);
+        }
+
+        public function unsubscribe($sub){
+            listeners.remove(sub);
+        }
+
+        public function addName($name) {
+            list.add(name);
+            notifyListeners();
+        }
+
+        private function notifyListeners() {
+            for ($listeners as &$sub) {
+                sub.notify(this);
+            }
+        }
     
         public function getCoin($id){
             //call api get coin, return coin
